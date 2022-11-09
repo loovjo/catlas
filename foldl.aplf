@@ -1,0 +1,3 @@
+⍝ "proper" foldl (left to right evaluation, `acc f val`)
+⍝ left argument as initial value
+foldl←{c←⍺ ⋄ ⊃⊖⍺⍺{c⊢←c ⍺⍺ ⍵}¨⍵}

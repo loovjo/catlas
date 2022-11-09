@@ -1,0 +1,5 @@
+say_meow←{
+    ⎕←'hiii'
+    ⎕←⊃'meow' 'mrow' 'meowww' 'mrew'⌷⍨?4
+    ⎕←'meow'
+}
