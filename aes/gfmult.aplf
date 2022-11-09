@@ -1,0 +1,8 @@
+⍝ ⍺ × ⍵, where ⍺ and ⍵ are represented as polynomials of the field GF(2)[x]/(x⁸+x⁴+x³+x+1)
+gfmult ← {⎕IO←0
+    abin ← ⊖ (8⍴2) ⊤ ⍺
+    wpows ← ⍵, ⍵{
+        ⍺<128 : 2×⍺ ⋄ 283 ##.xor 2×⍺ ⍝ 283 = 0x11b
+    }##.scanl 7⍴0
+    0 ##.xor ##.foldl abin × wpows
+}
