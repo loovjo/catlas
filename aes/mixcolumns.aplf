@@ -1,8 +1,8 @@
 mixcolumns ← {⎕IO←0
-    cols ← ⊂⍤1 ⍉ 4 4 ⍴ ⍵
+    cols ← ⊂⍤1⊢4 4 ⍴ ⍵
     dotmult ← { 0 ##.xor ##.foldl ⍺ gfmult¨ ⍵ }
     mixcolumn ← {
         (2 3 1 1 dotmult ⍵), (1 2 3 1 dotmult ⍵), (1 1 2 3 dotmult ⍵), (3 1 1 2 dotmult ⍵)
     }
-    , ⍉ ↑ mixcolumn¨ cols
+    , ↑ mixcolumn¨ cols
 }
