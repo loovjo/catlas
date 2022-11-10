@@ -1,5 +1,8 @@
 ⍝ TODO: Apparently AES 256 uses 0, 1, 3, 4 shift ??
 ⍝ https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#cite_note-17
+⍝ ⍺ ≡ ¯1 => inverse shiftrows
 shiftrows←{⎕IO←0
+    ⍺←1
+    ⍺≡¯1 : , ⍉ (-⍳4) ⌽ ⍉ 4 4 ⍴ ⍵
     , ⍉ (⍳4) ⌽ ⍉ 4 4 ⍴ ⍵
-}
+ }

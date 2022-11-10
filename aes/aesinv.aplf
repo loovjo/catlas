@@ -1,0 +1,20 @@
+⍝ (unexpanded) key ⍺, 16 elements large block ⍵
+aesinv ← {⎕IO←0
+    B ← ⍵
+    K ← ↓ keyschedule ⍺
+
+    B ⊢← B ##.xor ⊃⊖K
+    B ⊢← ¯1 shiftrows B
+    B ⊢← ¯1 sbox B
+
+    _←{
+        B ⊢← B ##.xor ⍵
+        B ⊢← ¯1 mixcolumns B
+        B ⊢← ¯1 shiftrows B
+        ⊢B ⊢← ¯1 sbox B
+    }¨ ⊖ ¯1↓1↓K ⍝ all but first and last of K, in reverse
+
+    B ⊢← B ##.xor ⊃K
+    B
+}
+
