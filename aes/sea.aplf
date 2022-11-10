@@ -1,5 +1,6 @@
-⍝ (unexpanded) key ⍺, 16 elements large block ⍵
-aesinv ← {⎕IO←0
+⍝ inverse of aes in ⍵
+⍝ m ≡ k aes k sea m and m ≡ k sea k aes m should always hold
+sea ← {⎕IO←0
     B ← ⍵
     K ← ↓ keyschedule ⍺
 
